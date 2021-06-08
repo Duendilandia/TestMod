@@ -1,0 +1,14 @@
+{
+	"item.mymod.chromite_fragment": "Chromite Fragment",
+	"item.mymod.basic_wand": "Basic Wand", 
+	
+	"block.mymod.chromite_block": "Chromite Block",
+	"block.mymod.basic_alter": "Basic Alter",
+	"block.mymod.mixer_cauldron": "Mixer Cauldron",
+	
+	"itemGroup.example_tab": "Example Tab",
+	
+	"container.mymod.basic_alter": "Basic Alter",
+	"container.mymod.alter_tier": "Alter Tier: 1"
+	
+}

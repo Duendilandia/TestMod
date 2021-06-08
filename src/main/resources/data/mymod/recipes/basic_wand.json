@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        " / ",
+        "#  "
+    ],
+    "key": {
+        "#": {
+            "item": "mymod:chromite_fragment"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "mymod:basic_wand",
+        "count": 1
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#R#",
+        " S ",
+        "___"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:dark_oak_log"
+        },
+        "R": {
+            "item": "minecraft:red_carpet"
+        },
+        "S": {
+            "item": "minecraft:stripped_dark_oak_log"
+        },
+        "_": {
+            "item": "minecraft:polished_blackstone_slab"
+        }
+    },
+    "result": {
+        "item": "mymod:basic_alter",
+        "count": 1
+    }
+}

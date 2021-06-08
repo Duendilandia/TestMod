@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "# #",
+        "# #",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "mymod:chromite_block"
+        }
+    },
+    "result": {
+        "item": "mymod:mixer_cauldron",
+        "count": 1
+    }
+}
