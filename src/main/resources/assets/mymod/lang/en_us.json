@@ -1,6 +1,13 @@
 {
+	"item.mymod.chylomicron": "Chylomicron",
 	"item.mymod.chromite_fragment": "Chromite Fragment",
-	"item.mymod.basic_wand": "Basic Wand", 
+	"item.mymod.basic_wand": "Basic Wand",
+	"item.mymod.amber": "Amber",
+	"item.mymod.hellenian": "Hellenian",
+	"item.mymod.bauxite": "Bauxite",
+	
+	"item.mymod.undermine_pickaxe": "Undermine Pickaxe",
+	"item.mymod.sword_of_lifeblood": "Sword of Lifeblood",
 	
 	"block.mymod.chromite_block": "Chromite Block",
 	"block.mymod.basic_alter": "Basic Alter",

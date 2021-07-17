@@ -3,6 +3,7 @@ package com.Duendilandia.myMod.common.tileentities;
 import com.Duendilandia.myMod.init.TileEntitiesRegister;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Items;
@@ -19,18 +20,18 @@ public class MixerCauldronTileEntity extends TileEntity implements ITickableTile
 
 	public MixerCauldronTileEntity(TileEntityType<?> tileEntityType) {
 		super(tileEntityType);
-		this.stirTicks = 0;
+		this.stirTicks = 1000;
 	}
 	
 	public MixerCauldronTileEntity() {
 		this(TileEntitiesRegister.MIXER_CAULDRON_TILE_ENTITY.get());
 	}
-
+	
 	@Override
 	public void tick() {
 		if (this.stirTicks > 0) {
 	         --this.stirTicks;
-		}
+		}		
 		
 		/*if (this.stirTicks <= 0) {
 	         this.stirTicks = 200;

@@ -1,5 +1,16 @@
 {
 	"variants": {
-		"": { "model": "mymod:block/pillar" }
+		"up=true,down=false": { 
+			"model": "mymod:block/pillar_top" 
+		},
+		"up=false,down=true": { 
+			"model": "mymod:block/pillar_bottom" 
+		},
+		"up=true,down=true": { 
+			"model": "mymod:block/pillar" 
+		},
+		"up=false,down=false": { 
+			"model": "mymod:block/pillar" 
+		}
 	}
 }

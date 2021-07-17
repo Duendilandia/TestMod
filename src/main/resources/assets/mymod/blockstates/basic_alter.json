@@ -1,5 +1,8 @@
 {
 	"variants": {
-		"": { "model": "mymod:block/basic_alter" }
+		"facing=north": { "model": "mymod:block/basic_alter"},
+		"facing=south": { "model": "mymod:block/basic_alter", "y": 180 },
+		"facing=east": { "model": "mymod:block/basic_alter", "y": 90 },
+		"facing=west": { "model": "mymod:block/basic_alter", "y": 270}
 	}
 }

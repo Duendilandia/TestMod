@@ -1,14 +1,15 @@
-package com.Duendilandia.myMod.common.naterials;
+package com.Duendilandia.myMod.common.materials;
 
 import java.util.function.Supplier;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.util.LazyValue;
 
-public enum HelleniteMaterial implements IItemTier {
+public enum ToolTiers implements IItemTier {
 	
-	HELLENITE(4, 4000, 15f, 2f, 17, () -> {
+	HELLENITE(4, 3200, 12.0f, 6.0F, 17, () -> {
 		return Ingredient.of(ItemTags.PLANKS);
 	});
 	
@@ -17,16 +18,16 @@ public enum HelleniteMaterial implements IItemTier {
 	private final float efficiency;
 	private final float attackDamage;
 	private final int enchantability;
-	private final Ingredient repairMaterial;
+	private final LazyValue<Ingredient> repairMaterial;
 	
-	HelleniteMaterial(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability,
+	ToolTiers(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability,
 			Supplier<Ingredient> repairMaterial) {
 		this.harvestLevel = harvestLevel;
 		this.maxUses = maxUses;
 		this.efficiency = efficiency;
 		this.attackDamage = attackDamage;
 		this.enchantability = enchantability;
-		this.repairMaterial = repairMaterial.get();
+		this.repairMaterial = new LazyValue<>(repairMaterial);
 	}
 
 	@Override
@@ -56,7 +57,7 @@ public enum HelleniteMaterial implements IItemTier {
 
 	@Override
 	public Ingredient getRepairIngredient() {
-		return this.repairMaterial;
+		return this.repairMaterial.get();
 	}
 
 }

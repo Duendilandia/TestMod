@@ -65,7 +65,7 @@ public class MixerCauldronBlock extends Block{
 		double d1 = pos.getY();
 		double d2 = pos.getZ() + 0.3F + rand.nextFloat() * 0.6F;
 		world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d0, d1 + 1.25F, d2, 0.0D, 0.05D, 0.0D);
-		world.addParticle((IParticleData) ParticlesRegister.FLY_PARTICLE.get(), d0, d1 + 1.25F, d2, 0.0D, 0.05D, 0.0D);
+		world.addParticle((IParticleData) ParticlesRegister.FLY_PARTICLE.get(), d0, d1 + 1.25F, d2, 0.0D, 0.0D, 0.0D);
 		world.addParticle(ParticleTypes.BUBBLE, d0, pos.getY() + 0.9375F, d2, 0.0D, 0.05D, 0.0D);
 	}
 	

@@ -7,6 +7,7 @@ import net.minecraft.client.particle.IParticleFactory;
 import net.minecraft.client.particle.IParticleRenderType;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.SpriteTexturedParticle;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.ParticleTypes;
@@ -17,17 +18,33 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 public class FlyParticle extends SpriteTexturedParticle{
 
+	float coeff = 0;
+	
 	public FlyParticle(ClientWorld world, double xCoord, double yCoord, double zCoord, 
 			double xSpeed, double ySpeed, double zSpeed, IAnimatedSprite spriteWithAge) {
 		super(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed);
-	    this.lifetime = (int)(16.0D / (Math.random() * 0.8D + 0.2D));
+	    this.x = xCoord;
+	    this.y = yCoord;
+	    this.z = zCoord;
+		this.xd = xSpeed;
+	    this.yd = ySpeed;
+	    this.zd = zSpeed;
+	    this.lifetime = 200;
 	}
 	
 	@Override
 	public void tick() {
 		this.xo = this.x;
-	    this.yo = this.y;
-	    this.zo = this.z;
+	      this.yo = this.y;
+	      this.zo = this.z;
+	      if (this.age++ >= this.lifetime) {
+	         this.remove();
+	      } else {
+	         this.move(this.xd, this.yd, this.zd);
+	         this.zd = 0.05F * Math.cos(coeff/20F);
+	         this.yd = 0.05F * Math.sin(coeff/20F);
+	      }
+	      coeff++;
 	}
 	
 	@Override
@@ -47,6 +64,7 @@ public class FlyParticle extends SpriteTexturedParticle{
 		public Particle createParticle(BasicParticleType typeIn, ClientWorld worldIn, double x, double y, double z, 
 				double xSpeed, double ySpeed, double zSpeed) {
 			FlyParticle particle = new FlyParticle(worldIn, x, y, z, xSpeed, ySpeed, zSpeed, this.sprite);
+			particle.pickSprite(this.sprite);
 			return particle;
 		}
 	}
